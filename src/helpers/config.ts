@@ -22,7 +22,7 @@ const configParsers = {
     return key || '';
   },
   AZURE_OPENAI_DEPLOYMENT(name?: string) {
-    if(!name || name.length === 0) {
+    if (!name || name.length === 0) {
       return 'gpt-35-turbo';
     }
 
@@ -51,7 +51,7 @@ const configPath = path.join(os.homedir(), '.ai-shell');
 const fileExists = (filePath: string) =>
   fs.lstat(filePath).then(
     () => true,
-    () => false
+    () => false,
   );
 
 const readConfigFile = async (): Promise<RawConfig> => {
@@ -65,7 +65,7 @@ const readConfigFile = async (): Promise<RawConfig> => {
 };
 
 export const getConfig = async (
-  cliConfig?: RawConfig
+  cliConfig?: RawConfig,
 ): Promise<ValidConfig> => {
   const config = await readConfigFile();
   const parsedConfig: Record<string, unknown> = {};
@@ -156,7 +156,7 @@ export const showConfigUI = async () => {
       });
       if (p.isCancel(apiEndpoint)) return;
       await setConfigs([['OPENAI_API_ENDPOINT', apiEndpoint]]);
-    } else if(choice === 'AZURE_OPENAI_DEPLOYMENT') {
+    } else if (choice === 'AZURE_OPENAI_DEPLOYMENT') {
       const deploymentId = await p.text({
         message: i18n.t('Enter your Azure OpenAI API Deployment ID'),
       });

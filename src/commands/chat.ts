@@ -23,8 +23,12 @@ export default command(
     },
   },
   async (argv) => {
-    const { AZURE_OPENAI_DEPLOYMENT: deployment, OPENAI_API_ENDPOINT: apiEndpoint, OPENAI_KEY: key} = await getConfig();
-    if(!deployment || !apiEndpoint || !key) {
+    const {
+      AZURE_OPENAI_DEPLOYMENT: deployment,
+      OPENAI_API_ENDPOINT: apiEndpoint,
+      OPENAI_KEY: key,
+    } = await getConfig();
+    if (!deployment || !apiEndpoint || !key) {
       console.log('');
       console.log('Please set config and restart command.');
       await config.callback?.(argv);
@@ -50,7 +54,7 @@ export default command(
 
         const infoSpin = spinner();
         infoSpin.start(i18n.t(`THINKING...`));
-        
+
         let replying = false;
         chatHistory.push({
           role: 'user',
@@ -62,19 +66,19 @@ export default command(
         });
 
         const fullResponse = await readResponse((msg) => {
-          if(!replying) {
+          if (!replying) {
             infoSpin.stop(i18n.t(`AI Chat:`));
             replying = true;
             console.log('');
           }
-          process.stdout.write(msg)
+          process.stdout.write(msg);
         });
 
         chatHistory.push({
           role: 'assistant',
           content: fullResponse,
         });
-        if(!fullResponse.endsWith('\n')) {
+        if (!fullResponse.endsWith('\n')) {
           console.log('');
         }
         console.log('');
@@ -83,7 +87,7 @@ export default command(
 
       prompt();
     }
-  }
+  },
 );
 
 async function getResponse({
@@ -91,11 +95,11 @@ async function getResponse({
   system,
 }: {
   prompt: string | ChatCompletionRequestMessage[];
-  system: string
+  system: string;
 }) {
   const stream = await generateCompletion({
     prompt,
-    system
+    system,
   });
 
   return { readResponse: readData(stream) };
