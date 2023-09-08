@@ -78,4 +78,4 @@ This will set your language to Simplified Chinese.
 
 ## Credit
 
-- Thanks to [@builder.io/ai-shell](https://github.com/BuilderIO/ai-shell). This project is based on its excellent work results. 
+- Thanks to [@builder.io/ai-shell](https://github.com/BuilderIO/ai-shell). This project is based on its excellent work results.

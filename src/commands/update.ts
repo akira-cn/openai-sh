@@ -9,10 +9,19 @@ export default command(
     help: {
       description: 'Update AI Shell to the latest version',
     },
+    flags: {
+      sudo: {
+        type: Boolean,
+        description: 'Apply sudo',
+        alias: 's',
+      },
+    },
   },
-  async () => {
+  async (argv) => {
     console.log('');
-    const command = `sudo npm update -g ai-chat`;
+    const command = argv.flags.sudo
+      ? `sudo npm update -g ai-chat`
+      : `npm update -g ai-chat`;
     console.log(dim(`${i18n.t('Running')}: ${command}`));
     console.log('');
     await execaCommand(command, {

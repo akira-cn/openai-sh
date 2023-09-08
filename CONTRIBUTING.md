@@ -55,7 +55,7 @@ npm -g install jiti
 ```
 
 ```sh
-jiti src/cli.ts 
+jiti src/cli.ts
 ```
 
 ## Check the lint in order to pass

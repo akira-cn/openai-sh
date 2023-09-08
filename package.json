@@ -1,7 +1,7 @@
 {
   "name": "openai-sh",
   "description": "Fast ChatGPT CLI powered by Azure OpenAI.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "dependencies": {
     "@azure/openai": "^1.0.0-beta.5",
