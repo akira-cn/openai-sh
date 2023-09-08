@@ -1,5 +1,5 @@
 {
-  "name": "ai-sh",
+  "name": "openai-sh",
   "description": "Fast ChatGPT CLI powered by Azure OpenAI.",
   "version": "0.1.0",
   "type": "module",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akira-cn/ai-sh"
+    "url": "https://github.com/akira-cn/openai-sh"
   },
   "files": [
     "dist"
