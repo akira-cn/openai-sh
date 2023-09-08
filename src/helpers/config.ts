@@ -51,7 +51,7 @@ const configPath = path.join(os.homedir(), '.ai-shell');
 const fileExists = (filePath: string) =>
   fs.lstat(filePath).then(
     () => true,
-    () => false,
+    () => false
   );
 
 const readConfigFile = async (): Promise<RawConfig> => {
@@ -65,7 +65,7 @@ const readConfigFile = async (): Promise<RawConfig> => {
 };
 
 export const getConfig = async (
-  cliConfig?: RawConfig,
+  cliConfig?: RawConfig
 ): Promise<ValidConfig> => {
   const config = await readConfigFile();
   const parsedConfig: Record<string, unknown> = {};

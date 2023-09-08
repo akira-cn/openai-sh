@@ -19,5 +19,5 @@ cli(
   },
   async (argv) => {
     chat.callback?.(argv);
-  },
+  }
 );

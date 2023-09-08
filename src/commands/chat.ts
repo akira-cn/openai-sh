@@ -87,7 +87,7 @@ export default command(
 
       prompt();
     }
-  },
+  }
 );
 
 async function getResponse({

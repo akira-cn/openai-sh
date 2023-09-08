@@ -24,7 +24,7 @@ export async function generateCompletion({
   const events = client.listChatCompletions(
     deploymentId,
     [{ role: 'system', content: system }, ...messages],
-    { maxTokens: 1024 },
+    { maxTokens: 1024 }
   );
   return events;
 }
