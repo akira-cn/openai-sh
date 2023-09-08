@@ -1,4 +1,4 @@
-# AI Chat
+# AI-SH
 
 Fast ChatGPT CLI powered by Azure OpenAI.
 
