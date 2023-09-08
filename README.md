@@ -23,7 +23,7 @@ ai
 ## Usage
 
 ```bash
-ai <system prompt>?
+ai [-s 'system prompts']?
 ```
 
 With this command, you can engage in a conversation with the AI and receive helpful responses in a natural, conversational manner directly through the CLI:
