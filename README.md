@@ -6,10 +6,10 @@ Fast ChatGPT CLI powered by Azure OpenAI.
 
 > The minimum supported version of Node.js is v14
 
-1. Install _ai chat_:
+1. Install _ai-sh_:
 
 ```sh
-npm install -g ai-chat
+npm install -g ai-sh
 ```
 
 2. Follow the config steps when first run:
